@@ -20,6 +20,7 @@ tag=`aws ec2 describe-tags --filters "Name=resource-id,Values=$(ec2-metadata -i 
 
 #Set the ansibletag, if the Role tag is not set then simply set the ansibletag to baseplay so as to just run the "common" play for all instances
 #else set the ansibletag equivalent to the Role tag and optionally set the hostname of the instance as well.
+daship=`echo $privateip | sed 's/\./-/g'`
 if [[ -z "${tag}" ]]; then
 	ansibletag="baseplay"
 else
