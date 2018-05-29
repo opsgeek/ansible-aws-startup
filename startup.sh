@@ -4,7 +4,7 @@
 # Purpose: Startup configuration for instance on AWS
 
 
-# Get the tag value "Role" of the instance, private ip, public ip of instance and setup hostname and host.json file.
+# Get the tag value "Role" of the instance, private ip, public ip of instance and setup hostname.
 
 count_pip=`curl http://169.254.169.254/latest/meta-data/ | grep public-ipv4 | wc -l`
 
